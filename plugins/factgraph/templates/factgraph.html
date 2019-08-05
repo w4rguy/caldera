@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>factgraph Mode | Dashboard</title>
+        <link rel="shortcut icon" type="image/png" href="/gui/img/favicon.png"/>
+        <link rel="stylesheet" href="/gui/css/shared.css">
+        <link rel="stylesheet" href="/gui/css/navbar.css">
+        <link rel="stylesheet" href="/gui/jquery/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="/factgraph/css/basic.css">
+        <link rel="stylesheet" href="/gui/css/tabs.css">
+        <link rel="stylesheet" href="/factgraph/css/modal.css">
+        <link rel="stylesheet" href="/factgraph/css/graph.css">
+    </head>
+    <body style="margin-bottom: 100px">
+        <script>
+          document.body.className = 'fade';
+        </script>
+        <div class="topnav">
+          <a href="/">Home</a>
+          <a class="active" href="/plugin/factgraph/gui">factgraph mode</a>
+          <div class="topnav-right">
+            <a href="/logout">Logout</a>
+          </div>
+        </div>
+
+        <div class="column" style="flex:100%;margin-top:0">
+            <center>
+                <div id="build-workflow-toolbar" class="row-toolbar subnav">
+                    <div class="row-toolbar-section" id="section-0">
+                      <button class="row-toolbar-button" onclick="clearWorkflow();">
+                        <span class="icon"><img src="/factgraph/img/trash.png"></span>
+                        <span class="caption">Clear Canvas</span>
+                      </button>
+                  </div>
+                  <div class="row-toolbar-section" id="section-1">
+                      <button class="row-toolbar-button" onclick="viewSection('fact-graph'); reloadFactGraph();">
+                        <span class="icon"><img src="/factgraph/img/graph.png"></span>
+                        <span class="caption">factgraph Fact Graph</span>
+                      </button>
+                  </div>
+                </div>
+
+                <div id="factgraph-blocks" class="row-canvas">
+                    <center>
+
+                        <!-- group -->
+
+                          <div id="fact-graph" class="section-profile" style="display: none">
+                              <div class="row">
+                                  <div class="column" style="flex:100%;">
+                                    <svg id="fact-dependency-graph" width="1000" height="1200">
+                                    </svg>
+                                  </div>
+                              </div>
+                          </div>
+                      </center>
+                  </div>
+                </center>
+        </div>
+    </body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(e) {
+        document.body.className = '';
+      });
+    </script>
+    <script src="/gui/jquery/jquery.js"></script>
+    <script src="/gui/jquery/jquery-ui.js"></script>
+    <script src="/factgraph/js/d3.v5.min.js"></script>
+    <script src="/factgraph/js/factgraph.js"></script>
+    <script src="/factgraph/js/graph.js"></script>
+</html>
