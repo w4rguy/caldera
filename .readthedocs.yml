@@ -9,3 +9,6 @@ python:
    system_packages: true
 submodules:
   include: all
+mkdocs:
+  configuration: mkdocs.yml
+  fail_on_warning: false
