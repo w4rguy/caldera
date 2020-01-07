@@ -25,6 +25,7 @@ class AppService(BaseService):
     async def start_sniffer_untrusted_agents(self):
         """
         Cyclic function that repeatedly checks if there are agents to be marked as untrusted
+
         :return: None
         """
         next_check = self.config['untrusted_timer']
@@ -49,6 +50,7 @@ class AppService(BaseService):
     async def find_link(self, unique):
         """
         Locate a given link by its unique property
+
         :param unique:
         :return:
         """
@@ -60,6 +62,7 @@ class AppService(BaseService):
     async def run_scheduler(self):
         """
         Kick off all scheduled jobs, as their schedule determines
+
         :return:
         """
         while True:
@@ -78,6 +81,7 @@ class AppService(BaseService):
     async def resume_operations(self):
         """
         Resume all unfinished operations
+
         :return: None
         """
         await asyncio.sleep(10)
@@ -110,6 +114,7 @@ class AppService(BaseService):
     async def load_plugins(self):
         """
         Store all plugins in the data store
+
         :return:
         """
         for plug in os.listdir('plugins'):
